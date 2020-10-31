@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.rotate {
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateZ(45deg);
+    background-color: rgb(102, 155, 216);
+    margin: 30px;
+    width: 130px;
+}
+
+.content {
+    transform: rotateZ(-45deg);
+}
+
+.rotate:hover {
+    background-color: rgb(46, 110, 182);
+    border: solid rgb(25, 26, 63);
+}
+
+.blog {
+    height: 10rem;
+}
