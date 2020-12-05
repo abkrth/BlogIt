@@ -19,11 +19,24 @@
     transform: rotateZ(-45deg);
 }
 
+.blog {
+    height: 10rem;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
 .rotate:hover {
     background-color: rgb(46, 110, 182);
     border: solid rgb(25, 26, 63);
 }
 
-.blog {
-    height: 10rem;
+a:hover {
+    text-decoration: none;
+}
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
 }
