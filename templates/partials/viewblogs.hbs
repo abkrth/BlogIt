@@ -11,14 +11,14 @@
             </div> --}}
             {{#each blogs}}
             <article class="media content-section">
-                <img class="rounded-circle article-img" src="./images/avatar.png">
+                <img class="rounded-circle article-img" src="/images/profile.jpg">
                 <div class="media-body">
                     <div class="article-metadata">
                         <a class="mr-2" href="#">{{owner.name}}</a>
-                        <small class="text-muted">{{date}}</small>
+                        <small class="text-muted">{{createdAt}}</small>
                     </div>
-                    <h2><a class="article-title" href="#">{{title}}</a></h2>
-                    <p class="article-content">{{body}}</p>
+                    <h2><a class="article-title" href="/blogs/{{_id}}">{{title}}</a></h2>
+                    <p class="article-content blog-box">{{body}}</p>
                 </div>
             </article>
             {{/each}}

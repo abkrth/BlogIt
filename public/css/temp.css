@@ -3,6 +3,10 @@ body {
     color: #333333;
     margin-top: 5rem;
   }
+
+  p.letters {
+    word-wrap: break-word;
+  }
   
   h1, h2, h3, h4, h5, h6 {
     color: #444444;
@@ -42,7 +46,22 @@ body {
   }
   
   .article-content {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
     white-space: pre-line;
+    word-wrap: break-all;
   }
   
   .article-img {
@@ -85,4 +104,19 @@ body {
     background-color: rgb(228, 236, 236);
     color: rgb(152, 152, 223);
     
+  }
+
+  .parent-edit-del {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .icons {
+    margin: 3px;
+  }
+
+  .fabutton {
+    background: none;
+    padding: 0px;
+    border: none;
   }

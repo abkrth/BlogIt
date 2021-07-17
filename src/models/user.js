@@ -52,6 +52,7 @@ userSchema.virtual("blogs", {
     foreignField: "owner"
 });
 
+// methods are accessible on instances of the model, and not the entire model unlike statics methods (see below)
 userSchema.methods.generateAuthToken = async function () {
     const user = this;
     const token = jwt.sign({ _id: user._id.toString()}, "thakursaab")
@@ -70,7 +71,7 @@ userSchema.methods.toJSON = function () {
 	return userObject;
 };
 
-// static methods are for the whole model
+// static methods are for the whole model also called model methods, declared and defined using schema.statics.method_name
 userSchema.statics.findByCredentials = async (email, password) => {
 	const user = await User.findOne({ email });
 

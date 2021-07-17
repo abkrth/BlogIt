@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser')
 const jwt = require('jsonwebtoken')
 const User = require('./models/user')
 const Blog = require('./models/blog')
+let _ = require('lodash')
 
 const PORT = process.env.PORT || 3000
 
@@ -52,19 +53,20 @@ app.get('/', async (req, res) => {
         const decoded = jwt.verify(token, "thakursaab")
         const user = await User.findOne({ _id: decoded._id, 'tokens.token': token})
         if(!user)   {
-            console.log('fuck no user')
+            console.log('no user')
         }
         if(!token || !user) {
             throw new Error()
         }
         req.token = token
         req.user = user
-        const blogs = await Blog.find({}).populate('owner').exec()
+        var blogs = await Blog.find({}).populate('owner').exec()
+        blogs = _.orderBy(blogs, ['createdAt'], ['desc']);
         res.render('blogs', {
             blogs
         })
     } catch (e) {
-        res.render('index')
+        //res.render('index')
     }
 })
 

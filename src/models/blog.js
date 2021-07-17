@@ -10,7 +10,7 @@ const blogSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    postDate: Date,
+    createdAt: Date,
     owner: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
